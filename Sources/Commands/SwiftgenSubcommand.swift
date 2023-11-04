@@ -20,13 +20,7 @@ struct SwiftgenSubcommand: ParsableCommand {
 
         let shell = Shell()
 
-        let findCommand = [
-            Constants.find,
-            Constants.findRoot,
-            Constants.findArguments
-        ].joined(separator: " ")
-
-        let swiftgenConfigFiles = try shell.run(findCommand).split(whereSeparator: \.isNewline)
+        let swiftgenConfigFiles = FileFinder().filePaths(withName: Constants.swiftgenFile, at: Constants.findRoot)
 
         let swiftgenArguments = [
             configuration.executables.swiftgen,
@@ -43,9 +37,8 @@ struct SwiftgenSubcommand: ParsableCommand {
 
 extension SwiftgenSubcommand {
     private enum Constants {
-        static let find = "find"
         static let findRoot = "."
-        static let findArguments = "-name swiftgen.yml"
+        static let swiftgenFile = "swiftgen.yml"
         static let swiftgenCommand = "config run --config"
     }
 }
