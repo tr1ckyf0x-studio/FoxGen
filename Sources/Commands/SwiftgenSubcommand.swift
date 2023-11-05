@@ -12,7 +12,7 @@ struct SwiftgenSubcommand: ParsableCommand {
 
     static var configuration = CommandConfiguration(
         commandName: "swiftgen",
-        abstract: "Executes swiftgen for all .swiftgen files in project"
+        abstract: "Executes swiftgen for all swiftgen.yml files in project"
     )
 
     func run() throws {
