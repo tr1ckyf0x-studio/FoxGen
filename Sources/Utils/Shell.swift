@@ -1,6 +1,6 @@
 //
 //  Shell.swift
-//  
+//
 //
 //  Created by Vladislav Lisianskii on 10.09.2023.
 //
@@ -32,10 +32,12 @@ struct Shell {
     func runInteractive(_ command: String) throws {
         let task = Process()
         let outputPipe = Pipe()
+        let inputPipe = Pipe()
 
         task.environment = ProcessInfo.processInfo.environment
         task.standardOutput = outputPipe
         task.standardError = outputPipe
+        task.standardInput = inputPipe
         task.arguments = ["-c", command]
         task.executableURL = URL(fileURLWithPath: "/bin/zsh")
 
@@ -47,6 +49,18 @@ struct Shell {
             }
             do {
                 try FileHandle.standardOutput.write(contentsOf: data)
+            } catch {
+                print(error)
+            }
+        }
+
+        defer {
+            FileHandle.standardInput.readabilityHandler = nil
+        }
+
+        FileHandle.standardInput.readabilityHandler = { (fileHandle: FileHandle) in
+            do {
+                try inputPipe.fileHandleForWriting.write(contentsOf: fileHandle.availableData)
             } catch {
                 print(error)
             }
