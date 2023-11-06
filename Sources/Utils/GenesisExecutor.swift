@@ -25,7 +25,7 @@ struct GenesisExecutor {
         self.options = options
     }
 
-    func execute() throws -> String {
+    func execute() throws {
         let optionsString = options.map { (key: String, value: String) in
             "\(key): \(value)"
         }.joined(separator: ", ")
@@ -38,7 +38,7 @@ struct GenesisExecutor {
             "\"\(optionsString)\""
         ].joined(separator: " ")
 
-        return try shell.run(command)
+        try shell.runInteractive(command)
     }
 }
 

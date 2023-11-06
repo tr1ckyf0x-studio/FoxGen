@@ -15,8 +15,6 @@ struct YarchModuleSubcommand: ParsableCommand {
         abstract: "Generates YARCH module"
     )
 
-    @OptionGroup var moduleOptions: ModuleOptions
-
     func run() throws {
         let configuration = try ConfigurationLoader().loadConfiguration()
 
@@ -28,8 +26,6 @@ struct YarchModuleSubcommand: ParsableCommand {
 
         let options = [
             "modules_path": yarchConfiguration.modulesPath,
-            "module_name": moduleOptions.module,
-            "submodule_name": moduleOptions.submodule,
             "developer_name": GitProvider(shell: shell).username,
             "current_date": DateProvider().date
         ]
@@ -41,8 +37,7 @@ struct YarchModuleSubcommand: ParsableCommand {
             options: options
         )
 
-        let result = try genesisExecutor.execute()
-        print(result)
+        try genesisExecutor.execute()
     }
 }
 

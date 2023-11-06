@@ -15,9 +15,6 @@ struct BundleSubcommand: ParsableCommand {
         abstract: "Generates Bundle file"
     )
 
-    @Option(name: [.short, .long], help: "Module name")
-    var module: String
-
     func run() throws {
         let configuration = try ConfigurationLoader().loadConfiguration()
 
@@ -29,7 +26,6 @@ struct BundleSubcommand: ParsableCommand {
 
         let options = [
             "modules_path": bundleConfiguration.modulesPath,
-            "module_name": module,
             "developer_name": GitProvider(shell: shell).username,
             "current_date": DateProvider().date
         ]
@@ -41,8 +37,7 @@ struct BundleSubcommand: ParsableCommand {
             options: options
         )
 
-        let result = try genesisExecutor.execute()
-        print(result)
+        try genesisExecutor.execute()
     }
 }
 
