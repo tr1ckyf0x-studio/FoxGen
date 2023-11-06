@@ -42,10 +42,10 @@ extension ConfigurationLoader {
         var errorDescription: String? {
             switch self {
             case .configurationFileNotFound:
-                "Configuration file not found."
+                return "Configuration file not found."
 
             case let .invalidConfiguration(error):
-                "Configuration file is not valid.\n\(error)"
+                return "Configuration file is not valid.\n\(error)"
             }
         }
     }

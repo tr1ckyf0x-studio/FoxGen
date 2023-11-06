@@ -48,7 +48,7 @@ extension BundleSubcommand {
         var errorDescription: String? {
             switch self {
             case .invalidBundleConfiguration:
-                "Invalid Bundle configuration."
+                return "Invalid Bundle configuration."
             }
         }
     }

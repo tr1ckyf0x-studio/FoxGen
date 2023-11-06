@@ -48,7 +48,7 @@ extension ViperModuleSubcommand {
         var errorDescription: String? {
             switch self {
             case .invalidViperConfiguration:
-                "Invalid VIPER configuration."
+                return "Invalid VIPER configuration."
             }
         }
     }

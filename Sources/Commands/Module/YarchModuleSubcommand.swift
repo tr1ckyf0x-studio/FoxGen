@@ -48,7 +48,7 @@ extension YarchModuleSubcommand {
         var errorDescription: String? {
             switch self {
             case .invalidYarchConfiguration:
-                "Invalid YARCH configuration."
+                return "Invalid YARCH configuration."
             }
         }
     }
