@@ -41,7 +41,7 @@ struct FileFinder {
                 return url.lastPathComponent == name
             }
             .map { (url: URL) -> String in
-                url.path()
+                url.relativePath
             }
     }
 
