@@ -1,3 +1,7 @@
+## [0.0.6] - 2023-11-06
+
+- Added support for interactive commands. Removed options from module and bundle commands
+
 ## [0.0.5] - 2023-11-06
 
 - Set minimum Swift version to 5.7
