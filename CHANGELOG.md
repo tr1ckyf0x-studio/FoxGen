@@ -1,3 +1,7 @@
+## [0.0.5] - 2023-11-06
+
+- Set minimum Swift version to 5.7
+
 ## [0.0.4] - 2023-11-06
 
 - Set minimum macOS version to 11.0
