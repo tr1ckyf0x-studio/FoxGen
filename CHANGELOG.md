@@ -1,3 +1,7 @@
+## [0.0.7] - 2023-11-06
+
+- Fixed interactive shell
+
 ## [0.0.6] - 2023-11-06
 
 - Added support for interactive commands. Removed options from module and bundle commands
