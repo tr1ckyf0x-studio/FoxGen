@@ -1,3 +1,7 @@
+## [0.0.8] - 2023-11-07
+
+- Added return operators
+
 ## [0.0.7] - 2023-11-06
 
 - Fixed interactive shell
