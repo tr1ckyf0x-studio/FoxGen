@@ -1,3 +1,8 @@
+## [0.0.9] - 2024-02-01
+
+- Removed unused code
+- Added support for MVP module template
+
 ## [0.0.8] - 2023-11-07
 
 - Added return operators
