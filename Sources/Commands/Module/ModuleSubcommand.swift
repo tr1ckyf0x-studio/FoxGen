@@ -14,7 +14,8 @@ struct ModuleSubcommand: ParsableCommand {
         abstract: "Generates module",
         subcommands: [
             ViperModuleSubcommand.self,
-            YarchModuleSubcommand.self
+            YarchModuleSubcommand.self,
+            MvpModuleSubcommand.self
         ]
     )
 }

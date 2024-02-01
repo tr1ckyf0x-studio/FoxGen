@@ -11,5 +11,6 @@ struct Configuration: Decodable {
     let executables: ExecutablesConfiguration
     let viper: ViperConfiguration?
     let yarch: YarchConfiguration?
+    let mvp: MvpConfiguration?
     let bundle: BundleConfiguration?
 }
