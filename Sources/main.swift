@@ -7,8 +7,9 @@ struct FoxGen: ParsableCommand {
         abstract: "Generates project source files",
         version: "1.0.0",
         subcommands: [
-            ModuleSubcommand.self,
             BundleSubcommand.self,
+            ModuleSubcommand.self,
+            SourcerySubcommand.self,
             SwiftgenSubcommand.self
         ]
     )

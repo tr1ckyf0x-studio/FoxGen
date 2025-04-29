@@ -1,5 +1,7 @@
 ## [Next version]
 
+- Added support for Sourcery
+
 ## [0.0.9] - 2024-02-01
 
 - Removed unused code
