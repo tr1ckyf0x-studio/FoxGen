@@ -5,7 +5,7 @@ struct FoxGen: ParsableCommand {
     public static let configuration = CommandConfiguration(
         commandName: "foxgen",
         abstract: "Generates project source files",
-        version: "0.0.9",
+        version: "1.0.0",
         subcommands: [
             ModuleSubcommand.self,
             BundleSubcommand.self,

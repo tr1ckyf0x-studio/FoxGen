@@ -1,3 +1,5 @@
+## [Next version]
+
 ## [0.0.9] - 2024-02-01
 
 - Removed unused code
