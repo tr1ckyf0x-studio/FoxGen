@@ -14,8 +14,14 @@ struct FileFinder {
         self.fileManager = fileManager
     }
 
-    func filePaths(withName name: String, at path: String) -> [String] {
-
+    func filePaths(
+        withName name: String,
+        at path: String,
+        options: FileManager.DirectoryEnumerationOptions = [
+            .skipsPackageDescendants,
+            .skipsHiddenFiles
+        ]
+    ) -> [String] {
         let enumerator = URL(string: path)
             .flatMap { (pathURL: URL) -> FileManager.DirectoryEnumerator? in
                 fileManager.enumerator(
@@ -23,10 +29,7 @@ struct FileFinder {
                     includingPropertiesForKeys: [
                         .localizedNameKey
                     ],
-                    options: [
-                        .skipsPackageDescendants,
-                        .skipsHiddenFiles
-                    ]
+                    options: options
                 )
             }
 
@@ -44,5 +47,4 @@ struct FileFinder {
                 url.relativePath
             }
     }
-
 }

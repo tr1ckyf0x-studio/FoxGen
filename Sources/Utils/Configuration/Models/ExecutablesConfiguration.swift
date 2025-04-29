@@ -10,4 +10,5 @@ import Foundation
 struct ExecutablesConfiguration: Decodable {
     let genesis: String
     let swiftgen: String
+    let sourcery: String
 }
