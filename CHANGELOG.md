@@ -1,6 +1,9 @@
-## [Next version]
+## [1.1.0]
+
+## [1.0.0] - 2025-04-29
 
 - Added support for Sourcery
+- Updated dependencies
 
 ## [0.0.9] - 2024-02-01
 
