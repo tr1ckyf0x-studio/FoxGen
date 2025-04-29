@@ -10,8 +10,8 @@ let package = Package(
         .executable(name: "foxgen", targets: ["FoxGen"])
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser", exact: "1.2.3"),
-        .package(url: "https://github.com/jpsim/Yams", exact: "5.0.6")
+        .package(url: "https://github.com/apple/swift-argument-parser", exact: "1.5.0"),
+        .package(url: "https://github.com/jpsim/Yams", exact: "5.3.1")
     ],
     targets: [
         .executableTarget(
