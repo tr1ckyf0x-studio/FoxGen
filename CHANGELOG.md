@@ -1,4 +1,4 @@
-## [0.0.10] - 2025-05-29
+## [Next version]
 
 - Added support for Sourcery
 
